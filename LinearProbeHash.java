@@ -1,3 +1,7 @@
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+
 class LinearProbeHash {
 
   private int m, i, numberOfKeys;
@@ -69,7 +73,7 @@ class LinearProbeHash {
   public void deleteElement(Key key){
     int j = searchElement(key);
 
-    if(hashTable[j].data == key.data)
+    //if(hashTable[j].data != key.data)
       hashTable[j] = this.deleted;
 
   }
@@ -83,10 +87,21 @@ class LinearProbeHash {
   ////////////////////////////////////////////////////////////
 
   public void printTable(){
-    for(int i=0; i<this.m; i++){
-      if(this.hashTable[i] != null)
-        System.out.println(i + ": " + this.hashTable[i].data);
+
+    try {
+      FileWriter fw = new FileWriter("registros.txt");
+      PrintWriter pw = new PrintWriter(fw);
+      for(int i=0; i<this.m; i++){
+        if(this.hashTable[i] != null)
+          pw.println(i + ": " + this.hashTable[i].data);
+      }
+      pw.close();
+      System.out.println("Se creó el archivo correctamente.");
     }
+    catch (IOException e) {
+      System.out.println("Error al intentar crear el archivo.");
+    }
+
   }
 
   ////////////////////////////////////////////////////////////
