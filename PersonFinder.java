@@ -1,3 +1,14 @@
+/*
+  ______ __  __          __  __ ________   _____   ___
+ |  ____|  \/  |   /\   |  \/  |  ____\ \ / / _ \ / _ \
+ | |__  | \  / |  /  \  | \  / | |__   \ V / (_) | (_) |
+ |  __| | |\/| | / /\ \ | |\/| |  __|   > < \__, |> _ <
+ | |____| |  | |/ ____ \| |  | | |____ / . \  / /| (_) |
+ |______|_|  |_/_/    \_\_|  |_|______/_/ \_\/_/  \___/
+
+Emanuel Estrada Larios - A01633605
+*/
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -83,7 +94,7 @@ class PersonFinder extends JPanel implements ActionListener{
   public void addPerson(String name){
     char[] ch = name.toCharArray();
     for(int i=0; i<ch.length; i++){
-      if (ch[i] < 65 || (ch[i] > 90 && ch[i] < 97) || (ch[i] > 122 && ch[i] < 164) || ch[i] > 165) {
+      if (ch[i] < 32 || (ch[i] > 90 && ch[i] < 97) || ch[i] > 122) {
         JOptionPane.showMessageDialog(null,"Porfavor ingrese caracteres validos.");
         return;
       }

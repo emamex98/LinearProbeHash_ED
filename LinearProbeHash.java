@@ -1,3 +1,14 @@
+/*
+  ______ __  __          __  __ ________   _____   ___
+ |  ____|  \/  |   /\   |  \/  |  ____\ \ / / _ \ / _ \
+ | |__  | \  / |  /  \  | \  / | |__   \ V / (_) | (_) |
+ |  __| | |\/| | / /\ \ | |\/| |  __|   > < \__, |> _ <
+ | |____| |  | |/ ____ \| |  | | |____ / . \  / /| (_) |
+ |______|_|  |_/_/    \_\_|  |_|______/_/ \_\/_/  \___/
+
+Emanuel Estrada Larios - A01633605
+*/
+
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -50,7 +61,6 @@ class LinearProbeHash {
   ////////////////////////////////////////////////////////////
 
   public int searchElement(Key key){
-  // public int searchElement(int keyID){
     this.i = 0;
     int j = 0;
 
@@ -72,9 +82,7 @@ class LinearProbeHash {
 
   public void deleteElement(Key key){
     int j = searchElement(key);
-
-    //if(hashTable[j].data != key.data)
-      hashTable[j] = this.deleted;
+    hashTable[j] = this.deleted;
 
   }
 
@@ -103,22 +111,5 @@ class LinearProbeHash {
     }
 
   }
-
-  ////////////////////////////////////////////////////////////
-
-  // public static void main(String[] args) {
-  //   LinearProbeHash lph = new LinearProbeHash(5);
-  //   Key k22 = new Key(22,"Emanuel");
-  //   lph.insertElement(k22);
-  //   lph.insertElement(new Key(57,"Marisol"));
-  //   lph.insertElement(new Key(3,"Sara"));
-  //   lph.insertElement(new Key(16,"Joaquin"));
-  //   lph.insertElement(new Key(1,"Marisa"));
-  //   lph.printTable();
-  //   System.out.println("Llave 7 esta en index "+lph.searchElement(7));
-  //   lph.deleteElement(k22);
-  //   //lph.insertElement(k22);
-  //   lph.printTable();
-  // }
 
 }
